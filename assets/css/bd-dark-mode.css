@@ -1,0 +1,83 @@
+.site-mode--dark.site-layout--boxed #page,
+.site-mode--dark #page,
+.site-mode--dark #bottom-footer {
+  background: #101010;
+}
+
+.site-mode--dark .mt-sidebar-menu-toggle a,
+.site-mode--dark .mt-menu-search a,
+.site-mode--dark .mt-social-icon-wrap li a,
+.site-mode--dark #site-navigation ul li a,
+.site-mode--dark #mt-site-mode-wrap #mode-switcher,
+.site-mode--dark h1,
+.site-mode--dark h2,
+.site-mode--dark h3,
+.site-mode--dark h4,
+.site-mode--dark h5,
+.site-mode--dark h6,
+.site-mode--dark .entry-title a,
+.site-mode--dark .wp_diary_latest_posts .mt-post-title a,
+.site-mode--dark .wp_diary_latest_posts .mt-post-meta a,
+.site-mode--dark .custom-header .entry-title, 
+.site-mode--dark .custom-header .page-title,
+.single.site-mode--dark .mt-author-box .mt-author-info .mt-author-name a,
+.site-mode--dark .cv-post-title a,
+.site-mode--dark #mt-scrollup,
+.site-mode--dark .sticky-header-sidebar-menu li a{
+  color: #fff;
+}
+
+.site-mode--dark #site-navigation ul li .sub-menu,
+.site-mode--dark #site-navigation ul li .children {
+  background: #2C2C2C;
+}
+
+.site-mode--dark .is-sticky .main-menu-wrapper {
+  background: #131313;
+}
+
+.site-mode--dark #mt-masonry article,
+.site-mode--dark .archive-classic-post-wrapper article,
+.site-mode--dark .archive-grid-post-wrapper article,
+.site-mode--dark .widget-area .widget,
+.site-mode--dark.archive #main > article,
+.site-mode--dark.blog #main > article,
+.site-mode--dark.search #main > article
+.single.site-mode--dark .content-area article,
+.site-mode--dark .navigation.post-navigation,
+.site-mode--dark .content-area .cv-block article {
+  background: #212121;
+}
+
+.site-mode--dark .entry-content,
+.site-mode--dark .entry-meta a,
+.site-mode--dark .entry-footer a,
+.site-mode--dark p,
+.site-mode--dark .breadcrumbs .trail-items li,
+.site-mode--dark .mt-author-meta,
+.site-mode--dark .site-info,
+.site-mode--dark .cv-post-meta .cv-post-meta-item a{
+  color: #bfbfbf;
+}
+
+.site-mode--dark .custom-header.no-bg-img {
+	background: #171717;
+}
+
+.site-mode--dark .entry-footer > span.tags-links{
+	color: #fff !important;
+}
+
+.site-mode--dark .sidebar-header-block {
+  background: #313131;
+}
+
+@media (max-width: 768px) {
+.site-mode--dark #site-navigation{
+	background: #333;
+}
+}
+
+.site-mode--dark .mt-menu-search .mt-form-wrap {
+  background: rgba(0,0,0,0.9);
+}

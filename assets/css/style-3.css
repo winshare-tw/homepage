@@ -1,0 +1,795 @@
+/*!
+Theme Name:         Blogger Diary
+Theme URI:          https://demo.mysterythemes.com/wp-diary-demos/
+Author:             Mystery Themes
+Author URI:         https://mysterythemes.com
+Description:        Blogger Diary is a charming WordPress theme designed for those who love blogging and want simple yet sophisticated layouts for their online diaries. The theme offers a visually appealing canvas for creative thoughts, stories, and adventures, ensuring an optimal reading experience on any device. With responsive and mobile-friendly layouts, Blogger Diary meets customization expectations, allowing users to easily personalize their web-diary. Whether seasoned or new to blogging, this theme elevates your online diary and allows you to embrace storytelling, creating a lasting impression on your readers.Check the demo at https://demo.mysterythemes.com/child-theme/blogger-diary/
+Version:            1.0.11
+Requires at least:  4.7
+Tested up to:       6.6
+Requires PHP:       7.4
+License:            GNU General Public License v3 or later
+License URI:        http://www.gnu.org/licenses/gpl-3.0.html
+Template:           wp-diary
+Text Domain:        blogger-diary
+Tags:               blog, portfolio, news, one-column, two-columns, left-sidebar, right-sidebar, custom-background, custom-colors, custom-header, custom-logo, custom-menu, editor-style, footer-widgets, post-formats, rtl-language-support, theme-options, translation-ready
+
+This theme, like WordPress, is licensed under the GPL.
+Use it to make something cool, have fun, and share what you've learned with others.
+/*--------------------------------------------------------------
+body Font CSS
+--------------------------------------------------------------*/
+
+.site-title,
+.wp_diary_author_info .author-name{
+  font-family: 'Great Vibes', cursive;
+}
+
+.item-title a,
+.entry-title a {
+  font-family: "Be Vietnam Pro", Helvetica, Arial, sans-serif;
+  font-weight: 700;
+  font-size: 28px;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Be Vietnam Pro", Helvetica, Arial, sans-serif;
+  font-weight: 700;
+}
+
+body {
+  font-family: "Be Vietnam Pro", Helvetica, Arial, sans-serif;
+  color: #302b2b;
+}
+
+.entry-meta a,
+.entry-footer a {
+  color: #302b2b;
+}
+
+h4,
+h5,
+a {
+  font-family: "Be Vietnam Pro", Helvetica, Arial, sans-serif;
+}
+
+a:hover,
+a:focus,
+a:active {
+  color: #000;
+}
+
+/********************************************************
+widget Css
+********************************************************/
+.wp_diary_latest_posts .mt-post-thumb {
+  border: 0px;
+  padding: 0px;
+}
+
+.widget-area .widget {
+  box-shadow: 0 0 35px rgba(0, 0, 0, 0.13);
+  padding: 20px;
+}
+
+.wp_diary_latest_posts .mt-post-meta a {
+  color: #302b2b;
+}
+
+.wp_diary_latest_posts .mt-post-title a {
+  font-size: 15px
+}
+
+.wp_diary_latest_posts .mt-post-meta a {
+  font-size: 13px;
+}
+
+#secondary .widget .widget-title,
+.mt-related-post-title {
+  text-align: left;
+  margin-bottom: 20px;
+  font-size: 30px;
+  padding: 10px 0px;
+  text-transform: uppercase;
+  border: 0px;
+}
+
+.wp_diary_author_info .author-avatar {
+  width: 85px;
+  height: 85px;
+  display: inline-block;
+  margin: 0 10px 0px 0px;
+}
+
+.wp_diary_author_info .author-avatar img {
+  border-radius: 50%;
+  height: 100%;
+}
+
+.wp_diary_author_info .author-name {
+  width: 65%;
+  display: inline-block;
+  text-align: left;
+}
+
+.wp_diary_author_info .author-description,
+.wp_diary_author_info .author-social {
+  margin: 10px 0px 0px;
+  text-align: left;
+}
+
+/********************************************************
+Sidebar Css
+********************************************************/
+#secondary,
+.home.blog #secondary {
+  width: 28%;
+}
+
+/********************************************************
+official social icon color Css
+********************************************************/
+.fa-instagram {
+  color: #C62828;
+}
+
+.fa-youtube,
+.fa-youtube-play {
+  color: #C62828;
+}
+
+.fa-facebook,
+.fa-facebook-circle,
+.fa-facebook-square,
+.fa-facebook-official,
+.fa-twitter-square,
+.fa-skype {
+  color: #1da1f2;
+}
+
+.fa-google-plus-circle,
+.fa-google-plus-square,
+.fa-google-plus-official,
+.fa-google-plus {
+  color: #db4a39;
+}
+
+.fa-tiktok {
+  color: #ee1d52;
+}
+
+.fa-twitter {
+  color: #1DA1F2;
+}
+
+.fa-whatsapp,
+.fa-whatsapp-square {
+  color: #25d366;
+}
+
+.fa-airbnb {
+  color: #F73659;
+}
+
+.fa-deviantart {
+  color: #05cc47;
+}
+
+.fa-linkedin,
+.fa-linkedin-square {
+  color: #0a66c2;
+}
+
+.fa-pinterest,
+.fa-pinterest-square,
+.fa-pinterest-alt {
+  color: #bd081c;
+}
+
+.fa-adobe {
+  color: #DB2219;
+}
+
+.fa-flickr,
+.fa-flickr-square {
+  color: #f40083;
+}
+
+.fa-tumblr {
+  color: #35465d;
+}
+
+.fa-slack {
+  color: #4a154b;
+}
+
+.fa-reddit,
+.fa-reddit-square {
+  color: #ff4500;
+}
+
+.fa-messenger {
+  color: #913BCC;
+}
+
+.fa-wordpress {
+  color: #009BCB;
+}
+
+.fa-weixin {
+  color: #09B83E;
+}
+
+.fa-behance {
+  color: #0054F7;
+}
+
+.fa-behance-square {
+  color: #053eff;
+}
+
+.fa-dribbble {
+  color: #ea4c89;
+}
+
+.fa-yahoo {
+  color: #6001d2;
+}
+
+.fa-blogger {
+  color: #ED7800;
+}
+
+.fa-snapchat,
+.fa-snapchat-ghost,
+.fa-snapchat-square {
+  color: #fffc00;
+}
+
+.fa-wix {
+  color: #F4B66C;
+}
+
+.fa-meta {
+  color: #005ED6;
+}
+
+.fa-baidu {
+  color: #2319DC;
+}
+
+.fa-twitch {
+  color: #8C45F7;
+}
+
+.fa-discord-alt {
+  color: #5562EA;
+}
+
+.fa-vk {
+  color: #0072F7;
+}
+
+.fa-trip-advisor {
+  color: #31D99C;
+}
+
+.fa-telegram {
+  color: #28A4E4;
+}
+
+.fa-quora {
+  color: #B32A26;
+}
+
+.fa-ok-ru {
+  color: #EF8B27;
+}
+
+.fa-microsoft-teams {
+  color: #544FBC;
+}
+
+.fa-foursquare {
+  color: #F14572;
+}
+
+.fa-soundcloud {
+  color: #F75200;
+}
+
+.fa-vimeo {
+  color: #00A8E8;
+}
+
+.fa-digg {
+  color: #313131;
+}
+
+.fa-periscope {
+  color: #3E9FBE;
+}
+
+.fa-xing {
+  color: #005D5B;
+}
+
+.fa-imdb {
+  color: #EDBF17;
+}
+
+/********************************************************
+Header Css
+********************************************************/
+.mt-sidebar-menu-toggle,
+.mt-menu-search {
+  font-size: 19px;
+}
+
+.site-title {
+  /* font-size: 32px; */
+  margin: 20px 0;
+}
+
+.slide-title a {
+  font-size: 44px;
+}
+
+#site-navigation ul li:hover>a,
+#site-navigation ul li.current-menu-item>a,
+#site-navigation ul li.current_page_ancestor>a,
+#site-navigation ul li.current_page_item>a,
+#site-navigation ul li.current-menu-ancestor>a,
+#site-navigation ul li.focus>a {
+  background: #333;
+  color: #fff;
+}
+
+#site-navigation ul li a::after {
+  top: 17px;
+  right: -3px;
+  height: 28px;
+}
+
+#site-navigation ul li .sub-menu,
+#site-navigation ul li .children {
+  z-index: 999;
+}
+
+#site-navigation ul li a {
+  line-height: 60px;
+  font-weight: 600;
+}
+
+.main-menu-wrapper .mt-form-close {
+  display: none;
+}
+
+.custom-logo-link {
+  margin: 0px 0px 20px;
+}
+
+/*--------------------------------------------------------------
+Slider Section CSS
+--------------------------------------------------------------*/
+.slide-content-block {
+  padding: 42px 30px;
+}
+
+/*--------------------------------------------------------------
+Article Section CSS
+--------------------------------------------------------------*/
+article {
+  text-align: left;
+}
+
+.wp-diary-content-masonry,
+.archive-grid-post-wrapper{
+  margin-left: -4%;
+}
+
+#mt-masonry article,
+.archive-classic-post-wrapper article,
+.archive-grid-post-wrapper article,
+.archive #main > article,
+.blog #main > article,
+.search #main > article {
+  width: 46%;
+  display: inline-block;
+  vertical-align: top;
+  margin-left: 4%;
+  margin-right: -4px;
+  margin-bottom: 4%;
+  padding: 20px;
+  box-shadow: 0 0 35px rgba(0, 0, 0, 0.13);
+  text-align: left;
+}
+
+.archive-classic-post-wrapper article,
+.archive #main > article,
+.blog #main > article,
+.search #main > article  {
+  width: 100%;
+  margin-left: 0;
+}
+
+article.sticky::before {
+  right: 20px;
+  left: auto;
+  text-align: center;
+}
+
+.entry-meta a {
+  margin: 0px 10px 10px 0px;
+  font-size: 15px;
+}
+
+.cat-links a {
+  margin: 0px 10px 10px 0px;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+article.hentry .entry-header {
+  padding: 0px;
+}
+
+article.hentry .entry-content{
+  margin: 10px 0px;
+  padding: 0px;
+}
+
+article.hentry .entry-footer .mt-readmore-btn {
+  border-radius: 30px;
+  border: 1px solid #c7831d;
+}
+
+article.hentry .entry-footer .mt-readmore-btn:hover {
+  background-color: transparent;
+  color: #000;
+}
+
+/*--------------------------------------------------------------
+SIngle post CSS
+--------------------------------------------------------------*/
+.single .content-area article {
+  box-shadow: 0 0 35px rgba(0, 0, 0, 0.13);
+  padding: 20px;
+  text-align: left;
+}
+
+.single article .entry-content {
+  text-align: justify;
+  padding: 10px 0px;
+  font-weight: 400;
+  color: #303030;
+}
+
+.single .entry-content a {
+  text-decoration: underline;
+}
+
+/*--------------------------------------------------------------
+Related post CSS
+--------------------------------------------------------------*/
+.mt-related-posts-wrapper article {
+  text-align: left;
+  box-shadow: 0 0 35px rgba(0, 0, 0, 0.13);
+  padding: 20px;
+}
+
+.mt-related-posts-wrapper .entry-footer>span.tags-links {
+  margin: 0px 0 20px;
+}
+
+.single .mt-related-posts-wrapper .entry-title a {
+  font-size: 18px;
+}
+
+/*--------------------------------------------------------------
+Breadcrump and Inner Page CSS
+--------------------------------------------------------------*/
+.custom-header.no-bg-img {
+  background: #efefef;
+}
+
+.mt-breadcrumb .mt-container {
+  width: 100%;
+}
+
+.custom-header .entry-title,
+.custom-header .page-title {
+  color: #3d3d4f;
+  text-transform: capitalize;
+}
+
+.breadcrumbs .trail-items li {
+  color: #3d3d4f;
+}
+
+.content-area .cv-block article {
+  box-shadow: 0 0 35px rgba(0, 0, 0, 0.13);
+  padding: 20px;
+}
+
+.content-area .entry-content {
+  margin: 0px 0px 10px;
+}
+
+.cv-post-meta .cv-post-meta-item {
+  font-size: 12px;
+}
+
+.cv-read-more a {
+  padding: 6px 25px;
+  border-radius: 30px;
+  border: 1px solid #000;
+  color: #fff;
+  background: #000;
+}
+
+.cv-read-more a:hover {
+  background: transparent;
+  color: #000;
+}
+
+.cv-post a,
+.cv-post-content {
+  font-family: "Be Vietnam Pro", Helvetica, Arial, sans-serif;
+}
+
+.cv-post-title a {
+  font-size: 28px;
+}
+
+.no-sidebar #mt-masonry article {
+  width: 29.33%;
+}
+
+.menu-toggle {
+  position: relative;
+  z-index: 999;
+}
+
+.sub-toggle:focus {
+  background: #666666 !important;
+}
+
+#comments h2.comments-title {
+  margin-top: 0;
+}
+
+.navigation.post-navigation {
+  background: #fff;
+  margin-top: 40px;
+  box-shadow: 0 0 35px rgba(0, 0, 0, 0.13);
+  padding: 20px 20px;
+}
+
+#secondary .widget:last-child {
+  margin-bottom: 0;
+}
+
+@media (min-width: 769px) {
+.navigation.pagination .nav-links a.page-numbers {
+  width: auto;
+}
+#site-navigation .mt-form-close {
+  display: none;
+}
+}
+
+.sidebar-header.mt-form-close {
+  position: fixed;
+}
+
+/*--------------------------------------------------------------
+background animation CSS
+--------------------------------------------------------------*/
+#content,
+#colophon,
+.site-header .site-branding,
+.custom-header .mt-container,
+#masthead {
+  z-index: 99;
+  position: relative;
+}
+
+#masthead {
+  z-index: 999;
+}
+
+.blogger-diary-background-animation {
+  background: transparent;
+  width: 100%;
+}
+
+.blogger-diary-circles {
+  position: fixed;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.blogger-diary-circles li {
+  position: fixed;
+  display: block;
+  list-style: none;
+  width: 20px;
+  height: 20px;
+  background: rgb(255 231 194 / 80%);
+  animation: animate 25s linear infinite;
+  bottom: -150px;
+}
+
+.blogger-diary-circles li:nth-child(1) {
+  left: 25%;
+  width: 80px;
+  height: 80px;
+  animation-delay: 0s;
+}
+
+.blogger-diary-circles li:nth-child(2) {
+  left: 10%;
+  width: 20px;
+  height: 20px;
+  animation-delay: 2s;
+  animation-duration: 12s;
+}
+
+.blogger-diary-circles li:nth-child(3) {
+  left: 70%;
+  width: 20px;
+  height: 20px;
+  animation-delay: 4s;
+}
+
+.blogger-diary-circles li:nth-child(4) {
+  left: 40%;
+  width: 60px;
+  height: 60px;
+  animation-delay: 0s;
+  animation-duration: 18s;
+}
+
+.blogger-diary-circles li:nth-child(5) {
+  left: 65%;
+  width: 20px;
+  height: 20px;
+  animation-delay: 0s;
+}
+
+.blogger-diary-circles li:nth-child(6) {
+  left: 75%;
+  width: 110px;
+  height: 110px;
+  animation-delay: 3s;
+}
+
+.blogger-diary-circles li:nth-child(7) {
+  left: 35%;
+  width: 150px;
+  height: 150px;
+  animation-delay: 7s;
+}
+
+.blogger-diary-circles li:nth-child(8) {
+  left: 50%;
+  width: 25px;
+  height: 25px;
+  animation-delay: 15s;
+  animation-duration: 45s;
+}
+
+.blogger-diary-circles li:nth-child(9) {
+  left: 20%;
+  width: 15px;
+  height: 15px;
+  animation-delay: 2s;
+  animation-duration: 35s;
+}
+
+.blogger-diary-circles li:nth-child(10) {
+  left: 85%;
+  width: 150px;
+  height: 150px;
+  animation-delay: 0s;
+  animation-duration: 11s;
+}
+
+@keyframes animate {
+  0% {
+    transform: translateY(0) rotate(0deg);
+    opacity: 1;
+    border-radius: 0;
+  }
+
+  100% {
+    transform: translateY(-1000px) rotate(720deg);
+    opacity: 0;
+    border-radius: 50%;
+  }
+
+}
+
+.wp-block-search__button {
+  padding: 0;
+}
+
+.mt-author-box {
+  margin-bottom: 10px;
+}
+
+/*--------------------------------------------------------------
+Site Mode CSS
+--------------------------------------------------------------*/
+
+#mt-site-mode-wrap {
+  display: inline-block;
+  margin: 0 0px 0 20px;
+}
+
+#mt-site-mode-wrap .light-mode .fa-moon,
+#mt-site-mode-wrap .dark-mode .fa-sun {
+  display: none;
+}
+
+#mt-site-mode-wrap #mode-switcher {
+  color: #212121;
+  font-size: 18px;
+}
+
+#mt-site-mode-wrap #mode-switcher:hover{
+  color: #c7831d;
+}
+
+/*--------------------------------------------------------------
+Dark Mode CSS
+--------------------------------------------------------------*/
+.site-mode--dark #comments h2.comments-title,
+.site-mode--dark .comment-author .fn .url, .site-mode--dark #comments h3 {
+	color: #fff;
+}
+
+.site-mode--dark .widget_archive a,
+.site-mode--dark .widget_categories a,
+.site-mode--dark .widget_recent_entries a,
+.site-mode--dark .widget_meta a,
+.site-mode--dark .widget_recent_comments li,
+.site-mode--dark .widget_rss li,
+.site-mode--dark .widget_pages li a,
+.site-mode--dark .widget_nav_menu li a,
+.site-mode--dark .wp-block-latest-posts li a,
+.site-mode--dark .wp-block-archives li a,
+.site-mode--dark .wp-block-categories li a,
+.site-mode--dark .wp-block-page-list li a,
+.site-mode--dark .wp-block-latest-comments li {
+  color: #afafaf;
+}
+
+.single.site-mode--dark .content-area article,
+.site-mode--dark #respond {
+  background: #212121;
+}
+
+.site-mode--dark .site-title a {
+	color: #fff;
+}
+
+.site-mode--dark.single .byline {
+  color: #bfbfbf;
+}
+
+.sticky-header-sidebar-menu li a{
+  text-align: left;
+}
+
+.sticky-header-sidebar-author .author-name{
+  padding:10px 0px 0px;
+}
