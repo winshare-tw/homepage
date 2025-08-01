@@ -174,6 +174,73 @@ link[rel="icon"],
 link[rel="shortcut icon"] {
     background: transparent;
 }
+
+/* 極簡回到頂部按鈕 - 不干擾其他元素 */
+.ekit-back-to-top-container {
+    position: fixed !important;
+    bottom: 35px !important;
+    right: 35px !important;
+    z-index: 9999 !important;
+    opacity: 0.6 !important;
+    transition: opacity 0.2s ease !important;
+}
+
+.ekit-back-to-top-container:hover {
+    opacity: 1 !important;
+}
+
+.ekit-btt__button,
+.ekit-back-to-top {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    width: 40px !important;
+    height: 40px !important;
+    background: #000 !important;
+    border-radius: 8px !important;
+    cursor: pointer !important;
+    transition: all 0.2s ease !important;
+    border: none !important;
+    box-shadow: none !important;
+}
+
+.ekit-btt__button:hover,
+.ekit-back-to-top:hover {
+    background: #333 !important;
+    transform: translateY(-1px) !important;
+}
+
+.ekit-btt__button svg,
+.ekit-back-to-top svg,
+.ekit-back-to-top i {
+    width: 18px !important;
+    height: 18px !important;
+    fill: white !important;
+    color: white !important;
+    font-size: 18px !important;
+}
+
+/* 響應式設計 */
+@media (max-width: 768px) {
+    .ekit-back-to-top-container {
+        bottom: 25px !important;
+        right: 25px !important;
+    }
+    
+    .ekit-btt__button,
+    .ekit-back-to-top {
+        width: 38px !important;
+        height: 38px !important;
+    }
+    
+    .ekit-btt__button svg,
+    .ekit-back-to-top svg,
+    .ekit-back-to-top i {
+        width: 16px !important;
+        height: 16px !important;
+        font-size: 16px !important;
+    }
+}
 </style>
 </head>
 <body class="home wp-singular page-template page-template-elementor_canvas page page-id-109 wp-theme-wp-diary wp-child-theme-blogger-diary site-layout--wide right-sidebar elementor-default elementor-template-canvas elementor-kit-44 elementor-page elementor-page-109">
