@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WinShare - 為企業打造 AI 和物聯網的競爭優勢</title>
+    <link rel="icon" href="assets/img/winshare-logo-32x32-clean.png" sizes="32x32">
+    <link rel="icon" href="assets/img/winshare-logo-16x16-clean.png" sizes="16x16">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', 'Microsoft JhengHei', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #ffffff;
+        }
+
+        /* Header */
+        .header {
+            background: #ffffff;
+            padding: 1rem 0;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 2rem;
+        }
+
+        .logo img {
+            height: 60px;
+            width: auto;
+        }
+
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-menu a {
+            text-decoration: none;
+            color: #333;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .nav-menu a:hover {
+            color: #1e40af;
+        }
+
+        .contact-info {
+            font-size: 0.9rem;
+            color: #666;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 120px 0 80px;
+            text-align: center;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            font-weight: 700;
+        }
+
+        .hero h2 {
+            font-size: 1.5rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+            font-weight: 300;
+        }
+
+        /* Services Section */
+        .services {
+            padding: 80px 0;
+            background: #f8fafc;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            color: #1e293b;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+
+        .service-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+        }
+
+        .service-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: #1e40af;
+        }
+
+        .service-card p {
+            color: #64748b;
+            line-height: 1.7;
+        }
+
+        /* About Section */
+        .about {
+            padding: 80px 0;
+            background: white;
+        }
+
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .about-text h2 {
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+            color: #1e293b;
+        }
+
+        .about-text p {
+            font-size: 1.1rem;
+            color: #64748b;
+            margin-bottom: 1.5rem;
+            line-height: 1.8;
+        }
+
+        .about-image {
+            text-align: center;
+        }
+
+        .about-image img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 12px;
+        }
+
+        /* Cases Section */
+        .cases {
+            padding: 80px 0;
+            background: #f8fafc;
+        }
+
+        .cases-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .case-card {
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            transition: transform 0.3s ease;
+        }
+
+        .case-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .case-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .case-content {
+            padding: 1.5rem;
+        }
+
+        .case-content h4 {
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+            color: #1e293b;
+        }
+
+        .case-content p {
+            color: #64748b;
+            font-size: 0.9rem;
+        }
+
+        /* Contact Section */
+        .contact {
+            padding: 80px 0;
+            background: #1e293b;
+            color: white;
+        }
+
+        .contact-content {
+            text-align: center;
+        }
+
+        .contact h2 {
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .contact p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+
+        .contact-info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .contact-item {
+            padding: 1.5rem;
+            background: rgba(255,255,255,0.1);
+            border-radius: 8px;
+        }
+
+        /* Footer */
+        .footer {
+            background: #0f172a;
+            color: white;
+            text-align: center;
+            padding: 2rem 0;
+        }
+
+        /* Back to Top Button */
+        .back-to-top {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            background: #1e40af;
+            color: white;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            z-index: 1000;
+        }
+
+        .back-to-top.visible {
+            opacity: 1;
+        }
+
+        .back-to-top:hover {
+            background: #1e3a8a;
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            .nav-menu {
+                display: none;
+            }
+            
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            .hero h2 {
+                font-size: 1.2rem;
+            }
+            
+            .about-content {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+            
+            .contact-info {
+                display: none;
+            }
+        }
+
+        /* Smooth Scrolling */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Animation */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="nav-container">
+            <div class="logo">
+                <img src="assets/img/winshare-logo-150x150-clean.png" alt="WinShare Logo">
+            </div>
+            <ul class="nav-menu">
+                <li><a href="#home">首頁</a></li>
+                <li><a href="#about">關於我們</a></li>
+                <li><a href="#services">服務項目</a></li>
+                <li><a href="#cases">實績案例</a></li>
+                <li><a href="#contact">聯絡我們</a></li>
+            </ul>
+            <div class="contact-info">
+                Call Us: +886-XXX-XXXXX
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1>WinShare 智能解決方案</h1>
+            <h2>為企業打造 AI 和物聯網的競爭優勢</h2>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="services">
+        <div class="container">
+            <h2 class="section-title fade-in">我們的服務</h2>
+            <div class="services-grid">
+                <div class="service-card fade-in">
+                    <h3>AI 企業顧問</h3>
+                    <p>AI 商業模式設計：為企業打造適合的 AI 商業模式，提高市場競爭力與盈利能力。</p>
+                    <p>企業 AI 導入策略：提供企業 AI 導入規劃，確保技術應用與業務目標匹配。</p>
+                    <p>數據分析與 AI 資產變現：透過數據驅動策略，協助企業發掘 AI 變現機會。</p>
+                </div>
+                <div class="service-card fade-in">
+                    <h3>AI 解決方案</h3>
+                    <p>AI 搜尋與推薦系統：提供智慧專利檢索、內容推薦等應用，提升決策效率。</p>
+                    <p>AI 廣告投放與數據分析：透過 AI 分析消費者行為，優化行銷策略與廣告投放精準度。</p>
+                    <p>智能化管理平台：針對企業的 IoT、智慧建築與生產流程，提供 AI 自動化解決方案。</p>
+                </div>
+                <div class="service-card fade-in">
+                    <h3>AI 產品開發</h3>
+                    <p>客製化 AI 產品設計：根據企業需求，開發專屬的 AI 應用程式與智能工具。</p>
+                    <p>AI 模型訓練與優化：提供機器學習模型的建構、訓練與持續優化服務。</p>
+                    <p>建構完整AI流程，從數據準備到模型部署，實現智能對話與個性化客戶服務。</p>
+                </div>
+                <div class="service-card fade-in">
+                    <h3>AI 技術整合</h3>
+                    <p>現有系統 AI 升級：將 AI 技術整合到企業現有的軟體系統與工作流程中。</p>
+                    <p>跨平台 AI 部署：支援雲端、本地與混合環境的 AI 解決方案佈署。</p>
+                    <p>技術支援與維護：提供長期的技術支援，確保 AI 系統穩定運行。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-text fade-in">
+                    <h2>關於 WinShare</h2>
+                    <p>WinShare 是一家專注於數位化轉型和智能化解決方案的創新公司。我們致力於為企業提供最前沿的 AI 和物聯網技術，幫助客戶在競爭激烈的市場中脫穎而出。</p>
+                    <p>憑藉深厚的技術實力和豐富的行業經驗，我們的團隊能夠為不同規模的企業量身定制智能解決方案，從策略規劃到技術實施，全程提供專業支援。</p>
+                    <p>我們相信，透過 AI 和物聯網的力量，每一家企業都能實現數位化轉型，提升效率，創造更大的商業價值。</p>
+                </div>
+                <div class="about-image fade-in">
+                    <img src="assets/img/1x1_WinShare_tw_是一家專注於數位化轉型和智能.png" alt="WinShare 團隊">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Cases Section -->
+    <section id="cases" class="cases">
+        <div class="container">
+            <h2 class="section-title fade-in">實績案例</h2>
+            <div class="cases-grid">
+                <div class="case-card fade-in">
+                    <img src="assets/img/1x1_卓越績效_助力企業邁向成功_提升企業效率與競爭力_見證我們產品的-600x400.png" alt="卓越績效案例">
+                    <div class="case-content">
+                        <h4>卓越績效提升</h4>
+                        <p>助力企業邁向成功，提升企業效率與競爭力，見證我們產品的卓越表現。</p>
+                    </div>
+                </div>
+                <div class="case-card fade-in">
+                    <img src="assets/img/1x1_智慧工廠與數位雙生的商業應用場景_如何提升生產效能與自動化__請-600x400.png" alt="智慧工廠案例">
+                    <div class="case-content">
+                        <h4>智慧工廠解決方案</h4>
+                        <p>智慧工廠與數位雙生的商業應用場景，如何提升生產效能與自動化。</p>
+                    </div>
+                </div>
+                <div class="case-card fade-in">
+                    <img src="assets/img/default-case.png" alt="AI 解決方案案例">
+                    <div class="case-content">
+                        <h4>AI 技術整合</h4>
+                        <p>為企業量身打造的 AI 技術整合方案，實現智能化營運管理。</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <div class="contact-content fade-in">
+                <h2>聯絡我們</h2>
+                <p>準備開始您的 AI 轉型之旅嗎？立即聯繫我們，讓專業團隊為您規劃最適合的解決方案。</p>
+                <div class="contact-info-grid">
+                    <div class="contact-item">
+                        <h4>電話聯繫</h4>
+                        <p>+886-XXX-XXXXX</p>
+                    </div>
+                    <div class="contact-item">
+                        <h4>電子郵件</h4>
+                        <p>info@winshare.tw</p>
+                    </div>
+                    <div class="contact-item">
+                        <h4>營業時間</h4>
+                        <p>週一至週五 9:00-18:00</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 WinShare. All rights reserved. | 為企業打造 AI 和物聯網的競爭優勢</p>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <a href="#home" class="back-to-top" id="backToTop">↑</a>
+
+    <script>
+        // Smooth scroll animation
+        document.addEventListener('DOMContentLoaded', function() {
+            const fadeElements = document.querySelectorAll('.fade-in');
+            const backToTop = document.getElementById('backToTop');
+
+            // Intersection Observer for fade-in animation
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                    }
+                });
+            }, {
+                threshold: 0.1
+            });
+
+            fadeElements.forEach(element => {
+                observer.observe(element);
+            });
+
+            // Back to top button visibility
+            window.addEventListener('scroll', () => {
+                if (window.pageYOffset > 300) {
+                    backToTop.classList.add('visible');
+                } else {
+                    backToTop.classList.remove('visible');
+                }
+            });
+
+            // Mobile menu toggle (if needed)
+            const navMenu = document.querySelector('.nav-menu');
+            if (window.innerWidth <= 768) {
+                // Add mobile menu functionality here if needed
+            }
+        });
+    </script>
+</body>
+</html>
