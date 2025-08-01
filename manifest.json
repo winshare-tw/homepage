@@ -1,7 +1,7 @@
 {
-  "name": "WinShare - AI企業顧問專家",
+  "name": "WinShare - 全球AI企業顧問專家",
   "short_name": "WinShare",
-  "description": "台灣領先的AI企業顧問公司，專業數位轉型服務",
+  "description": "全球領先的AI企業顧問公司，專精AI開發流程、AI作業流程、AI軟硬體整合顧問服務",
   "start_url": "/",
   "display": "standalone",
   "background_color": "#0077b5",
