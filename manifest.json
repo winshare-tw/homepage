@@ -1,0 +1,36 @@
+{
+  "name": "WinShare - AI企業顧問專家",
+  "short_name": "WinShare",
+  "description": "台灣領先的AI企業顧問公司，專業數位轉型服務",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0077b5",
+  "theme_color": "#0077b5",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "assets/img/winshare-logo-16x16-clean.png",
+      "sizes": "16x16",
+      "type": "image/png"
+    },
+    {
+      "src": "assets/img/winshare-logo-32x32-clean.png",
+      "sizes": "32x32",
+      "type": "image/png"
+    },
+    {
+      "src": "assets/img/winshare-logo-150x150-clean.png",
+      "sizes": "150x150",
+      "type": "image/png"
+    },
+    {
+      "src": "assets/img/winshare-logo-192x192-clean.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    }
+  ],
+  "categories": ["business", "productivity", "technology"],
+  "lang": "zh-TW",
+  "scope": "/",
+  "id": "winshare-ai-consultant"
+}

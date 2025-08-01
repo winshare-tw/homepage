@@ -1,0 +1,115 @@
+# SEO和性能優化設定
+
+# 啟用壓縮
+<IfModule mod_deflate.c>
+    AddOutputFilterByType DEFLATE text/plain
+    AddOutputFilterByType DEFLATE text/html
+    AddOutputFilterByType DEFLATE text/xml
+    AddOutputFilterByType DEFLATE text/css
+    AddOutputFilterByType DEFLATE application/xml
+    AddOutputFilterByType DEFLATE application/xhtml+xml
+    AddOutputFilterByType DEFLATE application/rss+xml
+    AddOutputFilterByType DEFLATE application/javascript
+    AddOutputFilterByType DEFLATE application/x-javascript
+    AddOutputFilterByType DEFLATE application/json
+</IfModule>
+
+# 快取設定
+<IfModule mod_expires.c>
+    ExpiresActive On
+    # 圖片快取 1 個月
+    ExpiresByType image/jpg "access plus 1 month"
+    ExpiresByType image/jpeg "access plus 1 month"
+    ExpiresByType image/gif "access plus 1 month"
+    ExpiresByType image/png "access plus 1 month"
+    ExpiresByType image/svg+xml "access plus 1 month"
+    ExpiresByType image/webp "access plus 1 month"
+    
+    # CSS 和 JS 快取 1 週
+    ExpiresByType text/css "access plus 1 week"
+    ExpiresByType application/javascript "access plus 1 week"
+    ExpiresByType application/x-javascript "access plus 1 week"
+    
+    # HTML 快取 1 小時
+    ExpiresByType text/html "access plus 1 hour"
+    
+    # 字體快取 1 年
+    ExpiresByType font/woff "access plus 1 year"
+    ExpiresByType font/woff2 "access plus 1 year"
+    ExpiresByType application/font-woff "access plus 1 year"
+    ExpiresByType application/font-woff2 "access plus 1 year"
+</IfModule>
+
+# 設定 Cache-Control headers
+<IfModule mod_headers.c>
+    # 圖片
+    <FilesMatch "\.(jpg|jpeg|png|gif|svg|webp)$">
+        Header set Cache-Control "max-age=2592000, public"
+    </FilesMatch>
+    
+    # CSS 和 JS
+    <FilesMatch "\.(css|js)$">
+        Header set Cache-Control "max-age=604800, public"
+    </FilesMatch>
+    
+    # HTML
+    <FilesMatch "\.(html|htm)$">
+        Header set Cache-Control "max-age=3600, public, must-revalidate"
+    </FilesMatch>
+    
+    # 安全性 Headers
+    Header always set X-Content-Type-Options nosniff
+    Header always set X-Frame-Options DENY
+    Header always set X-XSS-Protection "1; mode=block"
+    Header always set Referrer-Policy "strict-origin-when-cross-origin"
+    Header always set Permissions-Policy "geolocation=(), microphone=(), camera=()"
+</IfModule>
+
+# URL 重寫規則
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    
+    # 強制 HTTPS (如果有 SSL)
+    # RewriteCond %{HTTPS} off
+    # RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+    
+    # 移除 www (如果不需要)
+    # RewriteCond %{HTTP_HOST} ^www\.(.*)$ [NC]
+    # RewriteRule ^(.*)$ https://%1/$1 [R=301,L]
+    
+    # 移除尾隨斜線 (除了根目錄)
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteCond %{REQUEST_URI} (.+)/$
+    RewriteRule ^(.+)/$ /$1 [R=301,L]
+    
+    # 404 錯誤處理
+    ErrorDocument 404 /404.html
+</IfModule>
+
+# MIME types
+<IfModule mod_mime.c>
+    AddType application/javascript .js
+    AddType text/css .css
+    AddType image/svg+xml .svg .svgz
+    AddType application/font-woff .woff
+    AddType application/font-woff2 .woff2
+    AddType application/json .json
+    AddType application/manifest+json .webmanifest
+</IfModule>
+
+# 安全性設定
+<Files ~ "^.*\.([Hh][Tt][Aa])">
+    order allow,deny
+    deny from all
+    satisfy all
+</Files>
+
+# 防止目錄瀏覽
+Options -Indexes
+
+# 保護敏感檔案
+<FilesMatch "(^#.*#|\.(bak|config|sql|fla|psd|ini|log|sh|inc|swp|dist)|~)$">
+    Order allow,deny
+    Deny from all
+    Satisfy All
+</FilesMatch>

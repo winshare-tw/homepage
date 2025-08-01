@@ -1,0 +1,43 @@
+User-agent: *
+Allow: /
+Allow: /assets/
+Allow: /realcase/
+
+# 特別允許重要的爬蟲
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: Slurp
+Allow: /
+
+User-agent: DuckDuckBot
+Allow: /
+
+# 網站地圖位置
+Sitemap: https://winshare.tw/sitemap.xml
+
+# 爬取延遲設定
+Crawl-delay: 1
+
+# 禁止爬取的檔案類型
+Disallow: /*.log$
+Disallow: /*.tmp$
+Disallow: /tmp/
+Disallow: /cache/
+Disallow: /.git/
+Disallow: /node_modules/
+
+# 允許重要的靜態資源
+Allow: /assets/css/
+Allow: /assets/js/
+Allow: /assets/img/
+Allow: *.css
+Allow: *.js
+Allow: *.png
+Allow: *.jpg
+Allow: *.jpeg
+Allow: *.gif
+Allow: *.svg
